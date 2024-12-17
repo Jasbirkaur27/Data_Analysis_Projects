@@ -41,3 +41,30 @@ An outlier is a data point that differs significantly from other data points in 
 ### Isolation Forest algorithm
  It’s an unsupervised learning algorithm that identifies anomaly by isolating outliers in the data.Isolation Forest is based on the Decision Tree algorithm. It isolates the outliers by randomly selecting a feature from the given set of features and then randomly selecting a split value between the max and min values of that feature. This random partitioning of features will produce shorter paths in trees for the anomalous data points, thus distinguishing them from the rest of the data.
 <br><code>from sklearn.ensemble import IsolationForest</code><br>
+### Prophet Library
+Prophet is a forecasting library designed to handle time series data with daily observations that may contain missing data and outliers. It is widely used  for predicting future trends based on historical data. Prophet is particularly well-suited for time series that exhibit seasonal effects (e.g., yearly, weekly) and trends that may change over time.<br>
+**Prophet is mainly used for**:<br>
+Demand forecasting: Predicting the demand for products or services in future periods.<br>
+Sales forecasting: Estimating future sales based on historical data.<br>
+Financial forecasting: Predicting stock prices or market trends.<br>
+Environmental data analysis: Forecasting weather conditions, temperature, or rainfall (as shown in your example).<br>
+Supply chain management: Estimating future supply and demand in operations.<br>
+<br>
+### perasonr
+pearsonr: This function from scipy.stats is used to compute the Pearson correlation coefficient between two datasets. It returns two values: the correlation coefficient and the p-value (a measure of statistical significance).<br>
+Pearson Correlation Coefficient (r):<br>
+
+Measures the linear correlation between two variables.<br>
+**The value of r ranges from -1 to 1**<br>
+1: Perfect positive correlation (as one variable increases, the other increases).<br>
+-1: Perfect negative correlation (as one variable increases, the other decreases).<br>
+0: No correlation (the variables do not have a linear relationship).<br>
+<br>
+**Interpretation of Pearson's Correlation:**<br>
+r > 0.8: Strong positive correlation.<br>
+r > 0.5: Moderate positive correlation.<br>
+r > 0 but < 0.5: Weak positive correlation.<br>
+r < 0 but > -0.5: Weak negative correlation.<br>
+r < -0.5: Moderate negative correlation.<br>
+r < -0.8: Strong negative correlation.<br>
+**p-value:** The pearsonr function also returns a p-value, which helps determine if the correlation is statistically significant. A small p-value (typically < 0.05) indicates strong evidence against the null hypothesis (no correlation).<br>
