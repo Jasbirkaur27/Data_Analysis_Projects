@@ -68,3 +68,31 @@ r < 0 but > -0.5: Weak negative correlation.<br>
 r < -0.5: Moderate negative correlation.<br>
 r < -0.8: Strong negative correlation.<br>
 **p-value:** The pearsonr function also returns a p-value, which helps determine if the correlation is statistically significant. A small p-value (typically < 0.05) indicates strong evidence against the null hypothesis (no correlation).<br>
+<br> 
+### Lagged Effects Analysis
+Lagging is used in time series analysis to see if changes in a variable (like CO₂) affect another variable (like temperature) with a delay. This can be useful when you suspect that the effects of CO₂ concentration are not immediate but rather have a delayed impact on temperature change.<br>
+After creating these lagged variables, we will fit an Ordinary Least Squares (OLS) regression model. This model will use current and lagged CO₂ levels as predictors to estimate their contribution to current temperature anomalies.<br>
+With refrence to carbon emmision dataset, <br>
+we will determine:<br>
+1.	How strongly current CO₂ levels affect temperature changes.<br>
+2.	Whether CO₂ levels from previous years have a significant impact.<br>
+
+**Ordinary Least Squares (OLS) Regression**
+OLS is a statistical method used to estimate the relationship between one dependent variable and one or more independent variables. The goal is to minimize the difference between observed values and predicted values.<br>
+OLS is used when we want to understand or predict the linear relationship between variables. It's suitable when the relationship is continuous and linear, and the residuals (errors) are normally distributed.<br>
+**Important Assumptions:** <br>
+Linearity: The relationship between the dependent and independent variables should be linear.<br>
+Homoscedasticity: The variance of residuals should be constant across all levels of the independent variables.<br>
+Independence: Observations should be independent of each other.<br>
+Normality of residuals: The residuals (errors) should be normally distributed.<br>
+<br>
+Investigating the effect of past CO₂ levels on future temperature change.<br>
+Predicting future events or conditions based on historical data.<br><br>
+**Model Evaluation** <br>
+After fitting a regression model, it's crucial to evaluate its performance using metrics like R-squared, p-values, and coefficients.Evaluate your model to ensure it explains the data adequately and that the coefficients are statistically significant. If necessary, you can refine the model by adding/removing variables or adjusting for non-linearity.<br><br>
+
+**When to Use These Techniques**<br>
+•	Time Series Forecasting: When you are working with time-dependent data and want to predict future values (e.g., predicting temperature change based on historical CO₂ levels).<br>
+•	Understanding Relationships Over Time: When you need to understand how past events (lagged variables) influence current conditions. For example, how past CO₂ levels might be linked to future temperature changes.<br>
+•	Policy and Impact Analysis: In fields like climate science or economics, understanding the impact of past variables on future conditions is important for decision-making and policy.<br>
+<br>
