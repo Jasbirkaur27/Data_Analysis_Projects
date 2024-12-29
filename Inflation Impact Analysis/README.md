@@ -11,5 +11,6 @@ Identify the correlation between inflation rates and the exchange rate, consider
 Analyze whether the Purchasing Power Parity (PPP) theory holds by comparing the actual exchange rate with the expected exchange rate based on inflation differentials.<br>
 Explore any deviations from the expected PPP-based exchange rate to uncover other economic factors that may contribute to exchange rate fluctuations.<br><br>
 ### Analysis 
+The comparitive analysis of inflation rate of US and india and Exchange rate shows that the exchange rate is influenced by additional factors beyond inflation, such as economic growth, monetary policy, and international trade dynamics.To Check that we used Expected Exchange rate using PPP. but it shows higher exchange rate than actual exchange rate.
 <br><br>
-### Result 
+To check the detailed analysis please refer to file uploaded containing various graphs clearly showing the relaion between Inflation and exchange rate. 
