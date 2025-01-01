@@ -96,3 +96,26 @@ After fitting a regression model, it's crucial to evaluate its performance using
 •	Understanding Relationships Over Time: When you need to understand how past events (lagged variables) influence current conditions. For example, how past CO₂ levels might be linked to future temperature changes.<br>
 •	Policy and Impact Analysis: In fields like climate science or economics, understanding the impact of past variables on future conditions is important for decision-making and policy.<br>
 <br>
+## Getting real time data from API
+<code>import pandas as pd
+import yfinance as yf
+from datetime import date, timedelta
+end_date = date.today().strftime("%Y-%m-%d")
+start_date = (date.today() - timedelta(days=365)).strftime("%Y-%m-%d")
+tickers = ['RELIANCE.NS', 'TCS.NS', 'INFY.NS', 'HDFCBANK.NS']
+data = yf.download(tickers, start=start_date, end=end_date, progress=False)
+data = data.reset_index()
+data_melted = data.melt(id_vars=['Date'], var_name=['Attribute', 'Ticker'])
+data_pivoted = data_melted.pivot_table(index=['Date', 'Ticker'], columns='Attribute', values='value', aggfunc='first')
+stock_data = data_pivoted.reset_index()
+print(stock_data.head())</code><br>
+**Explaination** :<br>
+- yfinance as yf: This imports the yfinance library as yf, which allows for fetching financial data from Yahoo Finance.<br>
+- from datetime import date, timedelta: This imports the date and timedelta classes from Python's datetime module. date represents a date object, and timedelta represents a difference between two dates.<br>
+- The .NS suffix indicates that these are Indian stocks listed on the National Stock Exchange of India (NSE).<br>
+- <code>data_melted = data.melt(id_vars=['Date'], var_name=['Attribute', 'Ticker'])</code><br>
+The melt() function is used to reshape the DataFrame from wide format (multiple columns for each stock attribute) into long format (one column for each attribute and ticker).<br>
+The id_vars=['Date'] means that the Date column will remain as is, and the other columns will be melted into two new columns: Attribute and Ticker.<br>
+The column names like RELIANCE.NS Open, TCS.NS Close, etc., will be split into Attribute and Ticker based on the stock and the attribute.<br>
+The resulting data_melted DataFrame will have three columns: Date, Attribute, and Ticker, along with a value column that stores the respective stock data.<br>
+ 
